@@ -22,20 +22,14 @@
             return color;
         }
 
-        // รอให้หน้าเว็บโหลดเสร็จก่อนค่อยทำงาน (กันเหนียว)
         window.onload = function () {
-            // 1. หาปุ่มจาก ID
             const button = document.getElementById('colorBtn');
 
-            // 2. ดักจับเหตุการณ์การคลิก (Event Listener)
             button.addEventListener('click', function () {
-                // 3. สุ่มสีใหม่
                 const newColor = getRandomColor();
 
-                // 4. เปลี่ยนสีพื้นหลังของ body
                 document.body.style.backgroundColor = newColor;
 
-                // (แถม) เปลี่ยนข้อความในปุ่มให้รู้ว่าเป็นสีอะไร
                 button.textContent = "Color: " + newColor;
             });
         }
