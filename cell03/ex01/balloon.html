@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Interactive Balloon</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh; 
+            margin: 0;
+            background-color: #f0f2f5;
+            font-family: sans-serif;
+            user-select: none;
+        }
+
+        #balloon {
+            width: 200px;
+            height: 200px;
+            
+            background-color: red;
+            
+            border-radius: 50%;
+            
+            cursor: pointer;
+            
+            transition: all 0.2s ease-out;
+        }
+    </style>
+</head>
+<body>
+
+    <div id="balloon"></div>
+
+    <script>
+        let currentSize = 200;
+        let colorIndex = 0; // 0 = red, 1 = green, 2 = blue
+        const colors = ['red', 'green', 'blue'];
+        const balloon = document.getElementById('balloon');
+
+        function updateBalloon() {
+            balloon.style.width = currentSize + 'px';
+            balloon.style.height = currentSize + 'px';
+            balloon.style.backgroundColor = colors[colorIndex];
+        }
+
+        balloon.addEventListener('click', () => {
+            currentSize += 10;
+            
+            colorIndex++;
+            if (colorIndex >= colors.length) {
+                colorIndex = 0;
+            }
+
+            if (currentSize > 420) {
+                currentSize = 200; // กลับไปขนาดเริ่มต้น
+            }
+
+            updateBalloon();
+        });
+
+        balloon.addEventListener('mouseleave', () => {
+            currentSize -= 5;
+            
+            if (currentSize < 200) {
+                currentSize = 200;
+            }
+
+            colorIndex--;
+            if (colorIndex < 0) {
+                colorIndex = colors.length - 1; 
+            }
+
+            updateBalloon();
+        });
+    </script>
+
+</body>
+</html>
