@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Basic Calculator</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f0f0f0;
+            font-family: Arial, sans-serif;
+            margin: 0;
+        }
+
+        .calculator {
+            background-color: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            display: flex;
+            gap: 10px;
+            align-items: center;
+        }
+
+        input[type="text"], select, input[type="submit"] {
+            padding: 10px;
+            font-size: 16px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        input[type="submit"] {
+            background-color: #007bff;
+            color: white;
+            cursor: pointer;
+            font-weight: bold;
+            transition: background-color 0.3s;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="calculator">
+        <input type="text" id="leftMember" placeholder="Left number">
+
+        <select id="operator">
+            <option value="+">+</option>
+            <option value="-">-</option>
+            <option value="*">*</option>
+            <option value="/">/</option>
+            <option value="%">%</option>
+        </select>
+
+        <input type="text" id="rightMember" placeholder="Right number">
+
+        <input type="submit" id="calculateBtn" value="Try me!">
+    </div>
+
+    <script>
+        (function() {
+            const leftInput = document.getElementById('leftMember');
+            const rightInput = document.getElementById('rightMember');
+            const operatorSelect = document.getElementById('operator');
+            const calculateBtn = document.getElementById('calculateBtn');
+
+            // 1. ฟังก์ชันแจ้งเตือน 'Please, use me...' ทุกๆ 30 วินาที
+            setInterval(() => {
+                alert('Please, use me...');
+            }, 30000);
+
+            calculateBtn.addEventListener('click', () => {
+                const leftValue = leftInput.value;
+                const rightValue = rightInput.value;
+                const operator = operatorSelect.value;
+
+                if (!isPositiveInteger(leftValue) || !isPositiveInteger(rightValue)) {
+                    const msg = 'Error :(';
+                    console.log(msg);
+                    alert(msg);
+                    return;
+                }
+
+                const l = parseInt(leftValue, 10);
+                const r = parseInt(rightValue, 10);
+                let result;
+
+                if ((operator === '/' || operator === '%') && r === 0) {
+                    const msg = "It’s over 9000!";
+                    console.log(msg);
+                    alert(msg);
+                    return;
+                }
+
+                switch (operator) {
+                    case '+':
+                        result = l + r;
+                        break;
+                    case '-':
+                        result = l - r;
+                        break;
+                    case '*':
+                        result = l * r;
+                        break;
+                    case '/':
+                        result = l / r;
+                        break;
+                    case '%':
+                        result = l % r;
+                        break;
+                }
+
+                console.log(result);
+                alert(result);
+            });
+
+            function isPositiveInteger(str) {
+                return /^\d+$/.test(str);
+            }
+        })();
+    </script>
+
+</body>
+</html>
