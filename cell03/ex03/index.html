@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FT List</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+        }
+        
+        #ft_list {
+            margin-top: 20px;
+            border: 1px solid #ccc;
+            padding: 10px;
+            min-height: 100px;
+            width: 300px;
+        }
+
+        #ft_list div {
+            background-color: #f4f4f4;
+            padding: 10px;
+            margin-bottom: 5px;
+            border-bottom: 1px solid #ddd;
+            cursor: pointer; /* ให้รู้ว่าคลิกได้ */
+            transition: background-color 0.2s;
+        }
+
+        #ft_list div:hover {
+            background-color: #ffcccc; /* เปลี่ยนสีเมื่อเอาเมาส์ชี้ เพื่อสื่อว่าจะลบ */
+        }
+
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+    </style>
+    <script src="todo.js"></script>
+</head>
+<body>
+
+    <button id="newBtn">New</button>
+    <div id="ft_list"></div>
+
+</body>
+</html>
