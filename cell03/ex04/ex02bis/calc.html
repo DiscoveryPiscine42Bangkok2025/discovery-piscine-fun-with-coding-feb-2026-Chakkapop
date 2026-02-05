@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Calculator jQuery</title>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background: #f0f0f0;
+            font-family: sans-serif;
+        }
+
+        .calculator {
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            display: flex;
+            gap: 10px;
+        }
+
+        input,
+        select {
+            padding: 10px;
+            font-size: 16px;
+        }
+
+        input[type="submit"] {
+            background: #007bff;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+
+        input[type="submit"]:hover {
+            background: #0056b3;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="calculator">
+        <input type="text" id="leftMember" placeholder="Left number">
+        <select id="operator">
+            <option value="+">+</option>
+            <option value="-">-</option>
+            <option value="*">*</option>
+            <option value="/">/</option>
+            <option value="%">%</option>
+        </select>
+        <input type="text" id="rightMember" placeholder="Right number">
+        <input type="submit" id="calculateBtn" value="Try me!">
+    </div>
+
+    <script>
+        $(document).ready(function () {
+            // แจ้งเตือนทุก 30 วินาที
+            setInterval(function () {
+                alert('Please, use me...');
+            }, 30000);
+
+            $('#calculateBtn').click(function () {
+                // ใช้ .val() ของ jQuery ดึงค่า
+                let lStr = $('#leftMember').val();
+                let rStr = $('#rightMember').val();
+                let op = $('#operator').val();
+
+                // Regex ตรวจสอบว่าเป็นจำนวนเต็มบวก (Positive Integer >= 0)
+                let isPositiveInt = /^\d+$/;
+
+                if (!isPositiveInt.test(lStr) || !isPositiveInt.test(rStr)) {
+                    console.log('Error :(');
+                    alert('Error :(');
+                    return;
+                }
+
+                let l = parseInt(lStr);
+                let r = parseInt(rStr);
+                let result = 0;
+
+                // เช็คหารด้วยศูนย์
+                if ((op === '/' || op === '%') && r === 0) {
+                    console.log("It’s over 9000!");
+                    alert("It’s over 9000!");
+                    return;
+                }
+
+                switch (op) {
+                    case '+': result = l + r; break;
+                    case '-': result = l - r; break;
+                    case '*': result = l * r; break;
+                    case '/': result = l / r; break;
+                    case '%': result = l % r; break;
+                }
+
+                console.log(result);
+                alert(result);
+            });
+        });
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>FT List jQuery</title>
+    <style>
+        /* CSS เดิม */
+        body {
+            padding: 20px;
+            font-family: sans-serif;
+        }
+
+        #ft_list {
+            margin-top: 20px;
+            border: 1px solid #ccc;
+            padding: 10px;
+            width: 300px;
+            min-height: 100px;
+        }
+
+        #ft_list div {
+            background: #f4f4f4;
+            padding: 10px;
+            border-bottom: 1px solid #ddd;
+            cursor: pointer;
+        }
+
+        #ft_list div:hover {
+            background: #ffcccc;
+        }
+
+        button {
+            padding: 10px 20px;
+            cursor: pointer;
+        }
+    </style>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="todo.js"></script>
+</head>
+
+<body>
+    <button id="newBtn">New</button>
+    <div id="ft_list"></div>
+</body>
+
+</html>

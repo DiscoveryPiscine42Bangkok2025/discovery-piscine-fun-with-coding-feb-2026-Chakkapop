@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Random Background jQuery</title>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <link rel="stylesheet" href="backgroound.css">
+</head>
+<body>
+
+    <button id="colorBtn">Click me!</button>
+
+    <script>
+        $(document).ready(function() {
+            function getRandomColor() {
+                const letters = '0123456789ABCDEF';
+                let color = '#';
+                for (let i = 0; i < 6; i++) {
+                    color += letters[Math.floor(Math.random() * 16)];
+                }
+                return color;
+            }
+
+            $('#colorBtn').click(function() {
+                // ใช้ jQuery .css() เปลี่ยนสี
+                $('body').css('background-color', getRandomColor());
+            });
+        });
+    </script>
+</body>
+</html>
