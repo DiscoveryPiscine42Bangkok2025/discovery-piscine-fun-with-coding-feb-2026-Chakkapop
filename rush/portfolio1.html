@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@100..900&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
+
+        <title>Korn Klinthong</title>
+        <style>
+            body {
+                font-family: "Noto Sans", sans-serif;
+            }
+
+            #head1 {
+                font-weight: 300;
+                font-size: 4em;
+                color: white;
+                text-align: center;
+                animation: fadeIn 1s ease forwards;
+            }
+
+            .parallax {
+                height: 100vh;
+                background-attachment: fixed;
+                background-position: center;
+                background-repeat: no-repeat;
+                background-size: cover;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+
+            .bg1 {
+                background-image: url("https://picsum.photos/id/1018/1920/1080");
+            }
+
+            .prof-sec {
+                min-height: 100vh;
+                background-color: rgb(31, 24, 18);
+                color: white;
+                padding: 5rem 0;
+                /* animation: fadeIn 0.5s ease forwards; */
+            }
+
+            .proj-sec {
+                min-height: 50vh;
+                background-color: rgb(36, 28, 21);
+                color: white;
+                padding: 5rem 0;
+            }
+
+            .contact-sec {
+                min-height: 50vh;
+                background-color: rgb(31, 24, 18);
+                color: white;
+                padding: 5rem 0;
+            }
+
+
+            #head2 {
+                text-align: center;
+                text-decoration: underline;
+                margin-bottom: 3rem;
+                color: rgb(224, 153, 60);
+            }
+
+            #title {
+                font-weight: 700;
+            }
+
+            .profile-pic {
+                width: 100%;
+                border-radius: 10%;
+                display: block;
+                margin: auto;
+                border: 4px solid black
+            }
+
+            .custom-card {
+                background-color: #2b2a2a;
+                color: white;
+                border-radius: 16px;
+                border: 1px solid rgba(255,255,255,0.1);
+                transition: transform 0.2s ease, border-color 0.3s ease;
+            }
+
+            .custom-card:hover {
+                transform: translateY(-3px);
+                border-color: rgb(197, 162, 45);
+            }
+            @keyframes fadeIn {
+                from {
+                    opacity: 0;
+                    transform: translateY(10px);
+                }
+                to {
+                    opacity: 1;
+                    transform: translateY(0);
+                }   
+            }
+            
+            .custom-card .card-icon {
+                color: rgb(197, 162, 45);    
+                transition: color 0.3s ease;
+            }
+
+            .custom-card:hover .card-icon {
+                color: #0dcaf0;                    
+            }
+
+            .social-icon {
+                font-size: 2rem;
+                width: 50px;
+                height: 50px;
+                display: inline-flex;
+                align-items: center;
+                justify-content: center;
+
+                background-color: #2b2a2a;
+                border: 2px solid rgb(197, 162, 45);
+                border-radius: 50%;
+                color: white;
+                transition: transform 0.2s ease, border-color 0.3s ease, color 0.2s ease;
+            }
+
+            .social-icon:hover {
+                background-color: #0dcaf0;
+                color: #2b2a2a;
+                border: 1px solid #0dcaf0;
+            }
+
+            .icons {
+                display: flex;
+                justify-content: center;
+                gap: 20px;   
+            }
+
+        </style>
+    </head>
+
+    <body>
+        <nav class="navbar navbar-expand-md navbar-dark bg-dark sticky-top">
+            <div class="container">
+                <a href="index.html" class="navbar-brand"><i class="bi bi-arrow-bar-left"></i>BACK</a>
+
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#nav">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <div class="collapse navbar-collapse" id="nav">
+                    <ul class="navbar-nav">
+                        <li class="nav-item"><a href="#about" class="nav-link">About</a></li>
+                        <li class="nav-item"><a href="#project" class="nav-link">Experience</a></li>
+                        <li class="nav-item"><a href="#contact" class="nav-link">Contact</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+        <header class="parallax bg1">
+            <h1 id="head1">Hi, my name is Korn Klinthong</h1>
+        </header>
+
+        <section class="prof-sec" id="about">
+            <h1 id="head2">About Me</h1>
+
+            <div class="container">
+                <div class="row align-items-center"> 
+                    <div class="col-12 col-md-4 mb-3 mb-md-0">
+                        <img src="my_profile.jpg" alt="Profile Picture" class="profile-pic">
+                    </div>
+
+                    <div class="col-12 col-md-8 text-center text-md-start">
+                        <h1 id="title">Ready to take off towards a dream</h1>
+                        <hr>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Deserunt iusto aliquid ipsum a ex dolorem voluptate blanditiis tenetur recusandae! Asperiores fugiat molestias, hic consectetur inventore sed accusantium a excepturi dolores!</p>
+                    </div>
+                    <div class="row my-3">
+                        <div class="col-12">
+                            <hr>
+                        </div>
+                    </div>
+                    <div class="row g-4">
+                        <div class="col-12 col-md-4">
+                            <div class="card custom-card">
+                                <div class="card-body text-center">
+                                    <i class="bi bi-briefcase-fill card-icon"></i>
+                                    <h2 class="card-title custom-title">Work Experience</h2>
+                                    <p class="card-text textCustom">9000 years</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-12 col-md-4">
+                            <div class="card custom-card">
+                                <div class="card-body text-center">
+                                    <i class="bi bi-mortarboard-fill card-icon"></i>
+                                    <h2 class="card-title custom-title">Degree</h2>
+                                    <p class="card-text textCustom">Bachelor of Computer Engineering</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-12 col-md-4">
+                            <div class="card custom-card">
+                                <div class="card-body text-center">
+                                    <i class="bi bi-pin-map card-icon"></i>
+                                    <h2 class="card-title custom-title">Based In</h2>
+                                    <p class="card-text textCustom">Bangkok, Thailand</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row g-4 mt-2">
+                        <div class="col-12 col-md-4">
+                            <div class="card custom-card">
+                                <div class="card-body text-center">
+                                    <i class="bi bi-envelope-fill card-icon"></i>
+                                    <h2 class="card-title custom-title">Contact</h2>
+                                    <p class="card-text textCustom">67011395@kmitl.ac.th</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-12 col-md-4">
+                            <div class="card custom-card ">
+                                <div class="card-body text-center">
+                                    <i class="bi bi-phone card-icon"></i>
+                                    <h2 class="card-title custom-title">Phone</h2>
+                                    <p class="card-text textCustom">(+66) 12345678</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-12 col-md-4">
+                            <div class="card custom-card ">
+                                <div class="card-body text-center">
+                                    <i class="bi bi-calendar card-icon"></i>
+                                    <h2 class="card-title custom-title">Availability</h2>
+                                    <p class="card-text textCustom">Open</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="proj-sec" id="project">
+            <h1 id="head2">My Creation</h1>
+            <div class="container">
+                <div class="row align-items-center">
+
+                    <div class="col-12">
+                        <div class="card custom-card ">
+                            <div class="card-body text-center">
+                                <i class="bi bi-phone"></i>
+                                <h2 class="card-title custom-title">Hotel Project</h2>
+                                <p class="card-text textCustom">A project using FastHTML and OOP in Python to simulate hotel system</p>
+                                <a href="https://github.com/KindleDrift/OOP-Website-Project" class="btn btn-sm btn-outline-info">View Project</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="contact-sec" id="contact">
+            <h1 id="head2">Contacts</h1>
+            <div class="container">
+                <div class="icons">
+                    <a href="https://www.instagram.com/korn_klinthong_japan/"><i class="bi bi-instagram social-icon"></i></a>
+                    <a href="https://www.facebook.com/korn.klinthong.9"><i class="bi bi-facebook social-icon"></i></a>
+                    <a href="https://github.com/JpanBoy"><i class="bi bi-github social-icon"></i></a>
+                </div>    
+            </div>
+        </section>
+
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+
+    </body>
+</html>
